@@ -19,7 +19,7 @@ module.exports = {
   },
   google: {
     analytics: {
-      trackingId: 'UA-103033770-2',
+      trackingId: '',
     },
   },
 }
