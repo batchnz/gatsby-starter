@@ -3,38 +3,20 @@ import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
 import SEOPage from '../components/SEO/Page'
-import Link from '../components/TransitionLink'
-import Hero from '../components/Section/Hero'
+// Sections
 import Section from '../components/Section/Default'
-import Header from '../components/Section/Header'
+import SectionHero from '../components/Section/Hero'
+import SectionHeader from '../components/Section/Header'
 
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location}>
       <SEOPage title="Home" location={location} />
-      <Header id="Header" />
-      <Hero
-        id="Hero"
-        className="h-screen w-screen"
-        styles={{
-          backgroundSize: 'cover',
-          color: 'white',
-        }}
-      >
+      <SectionHeader id="Header" />
+      <SectionHero id="Hero" className="h-screen w-screen bg-cover text-white">
         <h1>Section 1 - Hero</h1>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great.</p>
-        <Link cover direction="right" to="/page-2/">
-          Go to page 2
-        </Link>
-      </Hero>
-      <Section
-        id="AboutUs"
-        className="h-screen w-screen"
-        styles={{
-          backgroundColor: 'lightGray',
-        }}
-      >
+      </SectionHero>
+      <Section id="AboutUs" className="h-screen w-screen bg-grey-lightest">
         <h1>Section 2 - AboutUs</h1>
       </Section>
     </Layout>

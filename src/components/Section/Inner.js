@@ -1,9 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+/** Project inner wrapper to define global width */
 
-/*
- * Project inner wrapper to define global width
- */
+import React from 'react'
 
 export default ({ children, className, styles }) => (
   <div
