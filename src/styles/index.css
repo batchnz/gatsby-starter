@@ -1,0 +1,7 @@
+/* stylelint-disable */
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+@import 'components/rte.css';
