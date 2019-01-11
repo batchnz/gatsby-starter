@@ -8,15 +8,13 @@ import OpenGraph from './OpenGraph'
 
 const SEOPage = ({ title, type, description, image }) => {
   const { site } = config
-  const formattedTitle = title ? `${title} | ${site.title}` : config.site.title
   return (
     <>
       {title && (
         <>
-          <Helmet title={formattedTitle}>
-            <meta name="title" content={formattedTitle} />
-          </Helmet>
-          <OpenGraph title={formattedTitle} />
+          <Helmet title={`${title} | ${site.title}`} />
+          <OpenGraph title={`${title} | ${site.title}`} />
+          <TwitterCard title={`${title} | ${site.title}`} />
         </>
       )}
       {description && (
@@ -27,7 +25,6 @@ const SEOPage = ({ title, type, description, image }) => {
           <OpenGraph description={description} />
         </>
       )}
-      <TwitterCard title={config.site.title} site={config.twitterHandle} />
       {/*
        * The image string requires the imported string path in the parent component
        * e.g.

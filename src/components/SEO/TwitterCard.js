@@ -12,10 +12,8 @@ const TwitterCard = ({
   description,
 }) => (
   <Helmet>
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:card" content={type} />
-
-    {/* ↓ ↓ ↓ Optional for the Twitter Card */}
+    {title && <meta name="twitter:title" content={title} />}
+    {type && <meta name="twitter:card" content={type} />}
     {site && <meta name="twitter:site" content={`@${site}`} />}
     {creator && <meta name="twitter:creator" content={creator} />}
     {image && <meta name="twitter:image" content={image} />}

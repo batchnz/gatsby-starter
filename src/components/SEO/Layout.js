@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 import config from '../../../data/site-config'
 import OpenGraph from './OpenGraph'
+import TwitterCard from './TwitterCard'
 
 const SEOLayout = () => {
   const { name, url, title, description, keywords } = config.site
@@ -22,6 +23,11 @@ const SEOLayout = () => {
         description={description}
         // * Default Image stored in ./static
         image={`${url}/${config.siteImage}`}
+      />
+      <TwitterCard
+        title={title}
+        type="summary_large_image"
+        site={config.twitterHandle}
       />
     </>
   )
