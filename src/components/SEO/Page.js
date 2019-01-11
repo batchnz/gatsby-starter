@@ -46,9 +46,7 @@ const SEOPage = ({ title, type, description, image }) => {
 }
 
 SEOPage.propTypes = {
-  location: PropTypes.object,
-  // ↓ ↓ ↓ optional, over write page default meta tags
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   type: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

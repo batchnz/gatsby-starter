@@ -6,20 +6,20 @@ const OpenGraph = ({
   type,
   siteName,
   url,
-  image,
   title,
+  image,
   description,
   facebookId,
 }) => (
   <Helmet>
-    {/* Level Hight */}
+    {/* Level Hight, required props */}
     {type && <meta property="og:type" content={type} />}
     {siteName && <meta property="og:site_name" content={siteName} />}
     {url && <meta property="og:url" content={url} />}
 
-    {/* Level middle && Facebook will share */}
-    {image && <meta property="og:image" content={image} />}
+    {/* Level Middle * Facebook will share */}
     {title && <meta property="og:title" content={title} />}
+    {image && <meta property="og:image" content={image} />}
     {description && <meta property="og:description" content={description} />}
 
     {/* Level Low */}
@@ -28,12 +28,15 @@ const OpenGraph = ({
 )
 
 OpenGraph.propTypes = {
-  type: PropTypes.string,
-  siteName: PropTypes.string,
-  url: PropTypes.string,
-  image: PropTypes.string,
+  // Level Hight
+  type: PropTypes.string.isRequired,
+  siteName: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  // Level Middle
   title: PropTypes.string,
+  image: PropTypes.string,
   description: PropTypes.string,
+  // Level Low
   facebookId: PropTypes.string,
 }
 

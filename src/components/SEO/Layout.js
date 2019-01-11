@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
 
 import config from '../../../data/site-config'
 import OpenGraph from './OpenGraph'
@@ -21,15 +20,11 @@ const SEOLayout = () => {
         url={url}
         title={title}
         description={description}
-        // *Default Image stored in ./static
+        // * Default Image stored in ./static
         image={`${url}/${config.siteImage}`}
       />
     </>
   )
-}
-
-SEOLayout.propTypes = {
-  location: PropTypes.object,
 }
 
 export default SEOLayout
