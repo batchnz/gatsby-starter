@@ -25,7 +25,7 @@ const TwitterCard = ({
 )
 
 TwitterCard.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   type: PropTypes.string,
   site: PropTypes.string,
   creator: PropTypes.string,
@@ -34,6 +34,7 @@ TwitterCard.propTypes = {
   description: PropTypes.string,
 }
 TwitterCard.defaultProps = {
+  title: '',
   type: 'summary_large_image',
 }
 

@@ -12,7 +12,7 @@ const OpenGraph = ({
   facebookId,
 }) => (
   <Helmet>
-    {/* Level Hight, required props */}
+    {/* Level Hight */}
     {type && <meta property="og:type" content={type} />}
     {siteName && <meta property="og:site_name" content={siteName} />}
     {url && <meta property="og:url" content={url} />}
@@ -28,15 +28,12 @@ const OpenGraph = ({
 )
 
 OpenGraph.propTypes = {
-  // Level Hight
-  type: PropTypes.string.isRequired,
-  siteName: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  // Level Middle
+  type: PropTypes.string,
+  siteName: PropTypes.string,
+  url: PropTypes.string,
   title: PropTypes.string,
   image: PropTypes.string,
   description: PropTypes.string,
-  // Level Low
   facebookId: PropTypes.string,
 }
 
