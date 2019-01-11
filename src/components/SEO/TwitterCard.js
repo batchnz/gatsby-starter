@@ -12,8 +12,8 @@ const TwitterCard = ({
   description,
 }) => (
   <Helmet>
-    <meta name="twitter:card" content={type} />
     <meta name="twitter:title" content={title} />
+    <meta name="twitter:card" content={type} />
 
     {/* optional */}
     {site && <meta name="twitter:site" content={`@${site}`} />}
@@ -25,7 +25,7 @@ const TwitterCard = ({
 )
 
 TwitterCard.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   type: PropTypes.string,
   site: PropTypes.string,
   creator: PropTypes.string,
@@ -34,7 +34,8 @@ TwitterCard.propTypes = {
   description: PropTypes.string,
 }
 TwitterCard.defaultProps = {
-  title: 'summary_large_image',
+  title: '',
+  type: 'summary_large_image',
 }
 
 export default TwitterCard
