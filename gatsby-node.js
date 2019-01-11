@@ -1,8 +1,6 @@
-const _ = require('lodash')
 const PurgeCssPlugin = require('purgecss-webpack-plugin')
 const path = require('path')
 const glob = require('glob')
-
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -42,4 +40,3 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
     })
   }
 }
-/* END */
