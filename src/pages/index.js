@@ -21,7 +21,7 @@ const IndexPage = ({ location }) => {
         Adipisicing dolor sit amet consectetur adipisicing elit. Obcaecati
         voluptates ipsa esse aperiam quod.
       </h2>
-      <div>
+      <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quas est
         beatae, sunt, facere molestias blanditiis debitis veritatis repudiandae
         incidunt natus libero adipisci aperiam quo tenetur ad voluptate qui
@@ -45,7 +45,7 @@ const IndexPage = ({ location }) => {
         illo sapiente explicabo possimus repellat, fuga magni! Quasi repellendus
         maxime ab animi ullam praesentium in, ad saepe, consectetur facere
         accusantium illo vero.
-      </div>
+      </p>
     </Layout>
   )
 }
