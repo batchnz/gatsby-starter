@@ -8,10 +8,18 @@ import Section from '../components/Section/Default'
 import SectionHero from '../components/Section/Hero'
 import SectionHeader from '../components/Section/Header'
 
+import siteImage from '../images/site-image.jpg'
+
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEOPage title="Home" location={location} />
+      <SEOPage
+        title="Home"
+        location={location}
+        description="fake description"
+        type="website"
+        image={siteImage}
+      />
       <SectionHeader id="Header" />
       <SectionHero id="Hero" className="h-screen w-screen bg-cover text-white">
         <h1>Section 1 - Hero</h1>

@@ -11,8 +11,9 @@ module.exports = {
     shortName: 'Batch Starter', // homescreen (PWA). under 12 characters.
     themeColor: '#ff006a', // progress theme colors
     bgColor: '#ff006a',
-    icon: 'src/images/gatsby-icon.png',
+    icon: 'gatsby-icon.png', // relative path to the folder `./src/images/`
   },
+  siteImage: 'site-image.jpg', // relative path to the folder `./static/`
   twitterHandle: 'batchnz',
   prismic: {
     repository: 'gatsby-starter-batch',

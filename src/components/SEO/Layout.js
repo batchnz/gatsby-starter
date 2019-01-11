@@ -4,11 +4,9 @@ import PropTypes from 'prop-types'
 
 import config from '../../../data/site-config'
 import OpenGraph from './OpenGraph'
-import socialBanner from '../../images/social-banner.jpg'
 
 const SEOLayout = () => {
   const { name, url, title, description, keywords } = config.site
-  const socialBannerUrl = `${url}${socialBanner}`
   return (
     <>
       <Helmet>
@@ -23,7 +21,8 @@ const SEOLayout = () => {
         url={url}
         title={title}
         description={description}
-        image={socialBannerUrl}
+        // *Default Image stored in ./static
+        image={`${url}/${config.siteImage}`}
       />
     </>
   )

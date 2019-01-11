@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.site.title,
         short_name: config.manifest.shortName,
@@ -16,7 +16,7 @@ module.exports = {
         background_color: config.manifest.bgColor,
         theme_color: config.manifest.themeColor,
         display: 'minimal-ui',
-        icon: config.manifest.icon, // This path is relative to the root of the site.
+        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site.
       },
     },
     {
@@ -27,7 +27,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: config.google.analytics.trackingId,
         head: true, // Put tracking script in the head
@@ -59,7 +59,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
           require('precss'),

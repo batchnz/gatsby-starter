@@ -18,7 +18,7 @@ const Hero = ({ id, styles, className, children }) => (
   <StaticQuery
     query={graphql`
       {
-        file(relativePath: { eq: "social-banner.jpg" }) {
+        file(relativePath: { eq: "site-image.jpg" }) {
           publicURL
         }
       }

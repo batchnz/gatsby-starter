@@ -5,12 +5,10 @@ import Helmet from 'react-helmet'
 import config from '../../../data/site-config'
 import TwitterCard from './TwitterCard'
 import OpenGraph from './OpenGraph'
-import socialBanner from '../../images/social-banner.jpg'
 
 const SEOPage = ({ title, type, description, image }) => {
   const { site } = config
   const formattedTitle = title ? `${title} | ${site.title}` : config.site.title
-  const socialBannerUrl = `${site.url}${image || socialBanner}`
   return (
     <>
       {title && (
@@ -21,15 +19,28 @@ const SEOPage = ({ title, type, description, image }) => {
           <OpenGraph title={formattedTitle} />
         </>
       )}
+      {description && (
+        <>
+          <Helmet>
+            <meta name="description" content={description} />
+          </Helmet>
+          <OpenGraph description={description} />
+        </>
+      )}
       <TwitterCard title={config.site.title} site={config.twitterHandle} />
+      {/*
+       * The image string requires the imported string path in the parent component
+       * e.g.
+       *    import siteImage from '../../images/site-image.jpg'
+       *    <SEOPage image={siteImage} />
+       */}
       {image && (
         <>
-          <TwitterCard image={socialBannerUrl} />
-          {type && <OpenGraph image={socialBannerUrl} />}
+          <TwitterCard image={`${site.url}${image}`} />
+          <OpenGraph image={`${site.url}${image}`} />
         </>
       )}
       {type && <OpenGraph type={type} />}
-      {description && <OpenGraph description={description} />}
     </>
   )
 }
