@@ -23,6 +23,7 @@ const SEOPage = ({ title, type, description, image }) => {
             <meta name="description" content={description} />
           </Helmet>
           <OpenGraph description={description} />
+          <TwitterCard description={description} />
         </>
       )}
       {/*
@@ -33,8 +34,8 @@ const SEOPage = ({ title, type, description, image }) => {
        */}
       {image && (
         <>
-          <TwitterCard image={`${site.url}${image}`} />
           <OpenGraph image={`${site.url}${image}`} />
+          <TwitterCard image={`${site.url}${image}`} />
         </>
       )}
       {type && <OpenGraph type={type} />}

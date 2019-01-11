@@ -12,7 +12,7 @@ const IndexPage = ({ location }) => {
       <SEOPage
         title="Page 1"
         location={location}
-        description="page level description"
+        description="This is the page 1 description"
         type="website"
         image={siteImage}
       />
