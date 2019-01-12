@@ -12,17 +12,12 @@ const OpenGraph = ({
   facebookId,
 }) => (
   <Helmet>
-    {/* Level Hight */}
     {type && <meta property="og:type" content={type} />}
     {siteName && <meta property="og:site_name" content={siteName} />}
     {url && <meta property="og:url" content={url} />}
-
-    {/* Level Middle * Facebook will share */}
     {title && <meta property="og:title" content={title} />}
     {image && <meta property="og:image" content={image} />}
     {description && <meta property="og:description" content={description} />}
-
-    {/* Level Low */}
     {facebookId && <meta property="fb:app_id" content={facebookId} />}
   </Helmet>
 )
@@ -38,5 +33,3 @@ OpenGraph.propTypes = {
 }
 
 export default OpenGraph
-
-// https://neilpatel.com/blog/open-graph-meta-tags/

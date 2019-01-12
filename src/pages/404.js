@@ -6,9 +6,11 @@ import SEOPage from '../components/SEO/Page'
 
 const NotFoundPage = ({ location }) => (
   <Layout location={location}>
-    <SEOPage title="404 page" location={location} />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <SEOPage title="Not Found" location={location} />
+    <h1 className="text-4xl leading-tight mb-2">Not Found</h1>
+    <h2 className="text-xl mb-8">
+      You just hit a route that doesn&#39;t exist... the sadness.
+    </h2>
   </Layout>
 )
 

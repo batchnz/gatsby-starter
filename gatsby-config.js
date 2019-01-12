@@ -25,7 +25,7 @@ module.exports = {
         background_color: config.manifest.bgColor,
         theme_color: config.manifest.themeColor,
         display: 'minimal-ui',
-        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site.
+        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site
       },
     },
     'gatsby-plugin-offline',
@@ -63,8 +63,8 @@ module.exports = {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
-          require('tailwindcss')('./tailwind.config.js'),
           require('precss'),
+          require('tailwindcss')('./tailwind.config.js'),
           require('autoprefixer')(),
           require('stylelint'),
           require('postcss-reporter')({ clearReportedMessages: true }),
