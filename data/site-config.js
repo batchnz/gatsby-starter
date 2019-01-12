@@ -15,6 +15,9 @@ module.exports = {
   },
   siteImage: 'site-image.jpg', // Relative to the folder `./static/`
   twitterHandle: 'batchnz',
+  prismic: {
+    repository: 'gatsby-starter-batch',
+  },
   google: {
     analytics: {
       trackingId: '',

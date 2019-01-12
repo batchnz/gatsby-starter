@@ -9,9 +9,9 @@ const Page2 = ({ location }) => {
   return (
     <Layout location={location}>
       <SEOPage title="Page 2" location={location} />
-      <h1 className="text-4xl leading-tight mb-2">Page 2</h1>
+      <h1>Page 2</h1>
       <Link cover to="/">
-        Go Home
+        Go HOME
       </Link>
     </Layout>
   )

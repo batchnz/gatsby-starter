@@ -21,7 +21,7 @@ const Layout = ({ children, location }) => (
     render={data => (
       <>
         <SEOLayout location={location} />
-        <div className="font-sans leading-normal">
+        <div className="leading-normal">
           <Header siteTitle={data.site.siteMetadata.title} />
           <div className="max-w-xl mx-auto px-4 mt-16 mb-20">{children}</div>
         </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import Link from '../TransitionLink'
-import { StaticQuery, graphql } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 import Menu from '../Menu'
 
@@ -20,20 +19,17 @@ const Header = ({ siteTitle }) => (
     `}
     render={data => (
       <nav className="bg-purple">
-        <div className="max-w-xl mx-auto px-4 py-5 flex items-center">
+        <div className="max-w-xl mx-auto px-4 py-5 flex items-center justify-between flex-wrap">
           <Link
-            className="text-white no-underline hover:underline focus:underline mr-6"
-            classSpan="flex items-center"
-            cover
-            direction="right"
             to="/"
+            className="flex items-center flex-no-shrink text-white mr-6 no-underline hover:underline focus:underline"
           >
             <Img
               fixed={data.logo.childImageSharp.fixed}
-              alt="Gatsby"
+              alt=""
               className="mr-4"
             />
-            <h1 className="text-xl font-normal">{siteTitle}</h1>
+            <h1 className="font-normal text-xl">{siteTitle}</h1>
           </Link>
           <Menu />
         </div>
