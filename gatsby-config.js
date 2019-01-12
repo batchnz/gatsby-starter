@@ -25,7 +25,7 @@ module.exports = {
         background_color: config.manifest.bgColor,
         theme_color: config.manifest.themeColor,
         display: 'minimal-ui',
-        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site.
+        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site
       },
     },
     'gatsby-plugin-offline',
