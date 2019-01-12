@@ -11,9 +11,9 @@ const Page2 = ({ location }) => {
       <SEOPage
         title="Page 2"
         location={location}
-        description="This is the second page description"
+        description="This is the Page 2 description"
       />
-      <h1 className="text-4xl leading-tight mb-2">Page 2</h1>
+      <h1 className="text-4xl leading-tight mb-4">Page 2</h1>
       <Link cover to="/">
         Go Home
       </Link>

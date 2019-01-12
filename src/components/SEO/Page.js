@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
 import config from '../../../data/site-config'
-import TwitterCard from './TwitterCard'
-import OpenGraph from './OpenGraph'
 
-const SEOPage = ({ title, type, description, image }) => {
+import Helmet from 'react-helmet'
+import OpenGraph from './OpenGraph'
+import TwitterCard from './TwitterCard'
+
+const SEOPage = ({ title, description, image, type }) => {
   const { site } = config
   return (
     <>

@@ -10,9 +10,9 @@ const IndexPage = ({ location }) => {
       <SEOPage
         title="Home"
         location={location}
-        description="This is the page description"
+        description="This is the Home description"
       />
-      <h1 className="text-4xl leading-tight mb-2">Home</h1>
+      <h1 className="text-4xl leading-tight mb-4">Home</h1>
       <div className="rte">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quas est

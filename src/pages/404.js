@@ -11,9 +11,9 @@ const NotFoundPage = ({ location }) => (
       location={location}
       description="This is the 404 page description"
     />
-    <h1 className="text-4xl leading-tight mb-2">404</h1>
+    <h1 className="text-4xl leading-tight mb-4">404</h1>
     <div className="rte">
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <p>You just hit a route that doesn&#39;t exist...</p>
     </div>
   </Layout>
 )

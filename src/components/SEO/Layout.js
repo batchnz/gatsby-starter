@@ -7,8 +7,8 @@ import TwitterCard from './TwitterCard'
 
 const SEOLayout = () => {
   const { name, url, title, description, keywords } = config.site
-  // * Default Image stored in ./static
-  const imageUrl = `${url}/${config.siteImage}`
+  const imageUrl = `${url}/${config.siteImage}` // Default image stored in ./static
+
   return (
     <>
       <Helmet title={title}>
