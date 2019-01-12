@@ -8,10 +8,14 @@ import Link from '../components/TransitionLink'
 const Page2 = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEOPage title="Page 2" location={location} />
-      <h1>Page 2</h1>
+      <SEOPage
+        title="Page 2"
+        location={location}
+        description="This is the second page description"
+      />
+      <h1 className="text-4xl leading-tight mb-2">Page 2</h1>
       <Link cover to="/">
-        Go HOME
+        Go Home
       </Link>
     </Layout>
   )
