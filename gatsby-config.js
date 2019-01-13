@@ -62,9 +62,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
+        // The plugin order matters
         postCssPlugins: [
-          require('precss'),
+          require('postcss-extend-rule'),
+          require('postcss-advanced-variables'),
+          require('postcss-preset-env'), // Default stage-2
+          require('postcss-atroot'),
+          require('postcss-property-lookup'),
           require('tailwindcss')('./tailwind.config.js'),
+          require('postcss-nested'),
           require('autoprefixer')(),
           require('stylelint'),
           require('postcss-reporter')({ clearReportedMessages: true }),
