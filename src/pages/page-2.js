@@ -16,7 +16,6 @@ const Page2 = ({ location }) => {
       />
       <h1 className="text-4xl leading-tight mb-4">Page 2</h1>
       <Form />
-
       <Link cover to="/">
         Go Home
       </Link>

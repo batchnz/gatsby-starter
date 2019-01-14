@@ -11,71 +11,68 @@ const encode = data => {
 }
 
 const DefaultForm = ({ values, isSubmitting, status, errors }) => (
-  <Form className="border p-2 max-w-xs">
+  <Form className="max-w-xs mb-8">
     {/* Error Message */}
     {errors.submit && <div className="text-red">{errors.submit}</div>}
     {/* Success Message */}
     {status && status.success && (
       <div className="text-green">form submitted success</div>
     )}
-    <div>
+    <div className="mb-4">
       <Field
         type="text"
         name="name"
         placeholder="Name"
-        className="border p-2 mb-2"
+        className="border p-2"
+        required
       />
     </div>
-    <div>
+    <div className="mb-4">
       <Field
         type="email"
         name="email"
         placeholder="Email"
-        className="border p-2 mb-2"
+        className="border p-2"
       />
     </div>
-    <div>
-      {/* Checkbox group */}
-      <Checkbox name="roles" value="admin" />
-      <Checkbox name="roles" value="stuff" />
-      <Checkbox name="roles" value="customer" />
+    <div className="mb-4">
+      <Checkbox name="roles" value="Admin" />
+      <Checkbox name="roles" value="Stuff" />
+      <Checkbox name="roles" value="Customer" />
     </div>
-    <div>
-      {/* Checkbox single */}
-      <span className="mr-2">
-        <Field
-          type="checkbox"
-          name="newsletter"
-          checked={values.newsletter}
-          className="border b-2 mr-2 mb-2"
-        />
-        I agree!
-      </span>
-      {/* Dropdown */}
-      <span>
-        <Field component="select" name="plan" className="border p-2">
-          <option value="free">Free</option>
-          <option value="premium">Premium</option>
-        </Field>
-      </span>
+    <div className="mb-4">
+      <Field
+        type="checkbox"
+        name="newsletter"
+        checked={values.newsletter}
+        className="mr-2"
+      />
+      Do you agree?
     </div>
-    <div>
-      {/* Textarea */}
+    <div className="mb-4">
+      <Field component="select" name="plan" className="border p-2">
+        <option value="free">Free</option>
+        <option value="premium">Premium</option>
+      </Field>
+    </div>
+    <div className="mb-4">
       <Field
         component="textarea"
         name="message"
-        placeholder="leave a message"
-        className="border p-2 mb-2"
+        placeholder="Leave a message"
+        className="border p-2"
       />
     </div>
-    <button
-      type="submit"
-      disabled={isSubmitting}
-      className="mt-5 bg-purple-light hover:bg-purple text-white font-bold py-3 px-5 rounded w-full"
-    >
-      Submit
-    </button>
-    <br />
+    <div className="mb-4">
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="bg-purple-light hover:bg-purple text-white font-bold py-3 px-5 rounded w-full"
+      >
+        Submit
+      </button>
+    </div>
+
     <pre>{JSON.stringify(values, null, 2)}</pre>
   </Form>
 )
