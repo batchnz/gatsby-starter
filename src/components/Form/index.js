@@ -35,21 +35,22 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
       />
     </div>
     <div>
-      {/* Checkbox group */}
+      {/* Checkbox group | Array */}
       <Checkbox name="roles" value="admin" />
       <Checkbox name="roles" value="stuff" />
       <Checkbox name="roles" value="customer" />
     </div>
     <div>
-      {/* Checkbox single */}
+      {/* Checkbox single | Boolean */}
       <span className="mr-2">
         <Field
           type="checkbox"
+          id="newsletter"
           name="newsletter"
           checked={values.newsletter}
           className="border b-2 mr-2 mb-2"
         />
-        I agree!
+        <label htmlFor="newsletter">I agree!</label>
       </span>
       {/* Dropdown */}
       <span>
@@ -95,6 +96,11 @@ const FormikForm = withFormik({
     return errors
   },
   handleSubmit: (form, { resetForm, setErrors, setStatus, setSubmitting }) => {
+    const convertedFormData = {
+      ...form,
+      ...(form.roles &&
+        !!form.roles.length && { roles: form.roles.join(', ') }),
+    }
     axios
       .post(
         // URL
@@ -102,12 +108,13 @@ const FormikForm = withFormik({
         // Data
         encode({
           'form-name': 'contact',
-          ...form,
+          ...convertedFormData,
         }),
         // Header
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then(() => {
+        console.log()
         resetForm()
         setStatus({ success: true })
       })
