@@ -45,7 +45,7 @@ const DefaultForm = ({ values, isSubmitting }) => (
     </div>
     <div>
       <Field
-        type="textarea"
+        component="textarea"
         name="message"
         placeholder="leave a message"
         className="border p-2 mb-2"
@@ -70,7 +70,6 @@ const FormikForm = withFormik({
     message: values.message || '',
   }),
   handleSubmit: (form, { resetForm, setErrors, setSubmitting }) => {
-    console.log(form)
     axios
       .post(
         // URL
