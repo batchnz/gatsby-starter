@@ -2,14 +2,22 @@ import React from 'react'
 import axios from 'axios'
 import { withFormik, Form, Field } from 'formik'
 
+import Checkbox from './Checkbox'
+
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
-const DefaultForm = ({ values, isSubmitting }) => (
+const DefaultForm = ({ values, isSubmitting, status, errors }) => (
   <Form className="border p-2 max-w-xs">
+    {/* Error Message */}
+    {errors.submit && <div className="text-red">{errors.submit}</div>}
+    {/* Success Message */}
+    {status && status.success && (
+      <div className="text-green">form submitted success</div>
+    )}
     <div>
       <Field
         type="text"
@@ -27,6 +35,13 @@ const DefaultForm = ({ values, isSubmitting }) => (
       />
     </div>
     <div>
+      {/* Checkbox group */}
+      <Checkbox name="roles" value="admin" />
+      <Checkbox name="roles" value="stuff" />
+      <Checkbox name="roles" value="customer" />
+    </div>
+    <div>
+      {/* Checkbox single */}
       <span className="mr-2">
         <Field
           type="checkbox"
@@ -36,6 +51,7 @@ const DefaultForm = ({ values, isSubmitting }) => (
         />
         I agree!
       </span>
+      {/* Dropdown */}
       <span>
         <Field component="select" name="plan" className="border p-2">
           <option value="free">Free</option>
@@ -44,6 +60,7 @@ const DefaultForm = ({ values, isSubmitting }) => (
       </span>
     </div>
     <div>
+      {/* Textarea */}
       <Field
         component="textarea"
         name="message"
@@ -58,6 +75,8 @@ const DefaultForm = ({ values, isSubmitting }) => (
     >
       Submit
     </button>
+    <br />
+    <pre>{JSON.stringify(values, null, 2)}</pre>
   </Form>
 )
 
@@ -66,10 +85,16 @@ const FormikForm = withFormik({
     name: values.name || '',
     email: values.email || '',
     newsletter: values.newsletter || false,
+    roles: values.roles || [],
     plan: values.plan || 'free',
     message: values.message || '',
   }),
-  handleSubmit: (form, { resetForm, setErrors, setSubmitting }) => {
+  validate: values => {
+    const errors = {}
+    // if (!values.firstname) errors.firstname = 'Required'
+    return errors
+  },
+  handleSubmit: (form, { resetForm, setErrors, setStatus, setSubmitting }) => {
     axios
       .post(
         // URL
@@ -83,12 +108,18 @@ const FormikForm = withFormik({
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then(() => {
-        alert('Success')
         resetForm()
+        setStatus({ success: true })
       })
       .catch(error => {
-        alert(error)
-        setErrors(error)
+        // Set errors.submit message
+        setErrors({
+          submit: 'There is an error to submit the form, please try again.',
+        })
+        // Erasing error message after 5s
+        setTimeout(() => {
+          setErrors({ submit: '' })
+        }, 5000)
       })
       .finally(() => {
         setSubmitting(false)
