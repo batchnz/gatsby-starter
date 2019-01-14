@@ -66,7 +66,7 @@ module.exports = {
         postCssPlugins: [
           require('postcss-extend-rule'),
           require('postcss-advanced-variables'),
-          require('postcss-preset-env'), // Default stage-2
+          require('postcss-preset-env'), // Defaults to Stage 2
           require('postcss-atroot'),
           require('postcss-property-lookup'),
           require('tailwindcss')('./tailwind.config.js'),
