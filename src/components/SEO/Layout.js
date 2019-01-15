@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import config from '../../../data/site-config'
 import OpenGraph from './OpenGraph'
 import TwitterCard from './TwitterCard'
 
-const SEOLayout = () => {
+const SEOLayout = ({ location }) => {
   const { name, url, title, description, keywords } = config.site
   const imageUrl = `${url}/${config.siteImage}` // Default image stored in ./static
 
@@ -22,7 +23,7 @@ const SEOLayout = () => {
         siteName={name}
         description={description}
         image={imageUrl}
-        url={url}
+        url={url + location.pathname || ''}
       />
       <TwitterCard
         title={title}
@@ -33,6 +34,10 @@ const SEOLayout = () => {
       />
     </>
   )
+}
+
+SEOLayout.propTypes = {
+  location: PropTypes.object.isRequired,
 }
 
 export default SEOLayout
