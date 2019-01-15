@@ -36,9 +36,8 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
       />
     </div>
     <div className="mb-4">
-      <Checkbox name="roles" value="Admin" />
-      <Checkbox name="roles" value="Stuff" />
-      <Checkbox name="roles" value="Customer" />
+      <Checkbox name="roles" value="admin" label="Admin" />
+      <Checkbox name="roles" value="customer" label="Customer" />
     </div>
     <div className="mb-4">
       <Field
@@ -48,7 +47,9 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
         checked={values.newsletter}
         className="mr-2"
       />
-      <label htmlFor="newsletter">Do you agree?</label>
+      <label htmlFor="newsletter">
+        Yes, I wish to sign up to our newsletter
+      </label>
     </div>
     <div className="mb-4">
       <Field component="select" name="plan" className="border p-2">
