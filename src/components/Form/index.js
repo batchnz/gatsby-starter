@@ -43,11 +43,12 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
     <div className="mb-4">
       <Field
         type="checkbox"
+        id="newsletter"
         name="newsletter"
         checked={values.newsletter}
         className="mr-2"
       />
-      Do you agree?
+      <label htmlFor="newsletter">I agree!</label>
     </div>
     <div className="mb-4">
       <Field component="select" name="plan" className="border p-2">
@@ -92,6 +93,11 @@ const FormikForm = withFormik({
     return errors
   },
   handleSubmit: (form, { resetForm, setErrors, setStatus, setSubmitting }) => {
+    const convertedFormData = {
+      ...form,
+      ...(form.roles &&
+        !!form.roles.length && { roles: form.roles.join(', ') }),
+    }
     axios
       .post(
         // URL
@@ -99,12 +105,13 @@ const FormikForm = withFormik({
         // Data
         encode({
           'form-name': 'contact',
-          ...form,
+          ...convertedFormData,
         }),
         // Header
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then(() => {
+        console.log()
         resetForm()
         setStatus({ success: true })
       })
