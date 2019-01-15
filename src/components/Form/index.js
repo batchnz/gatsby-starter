@@ -13,10 +13,10 @@ const encode = data => {
 const DefaultForm = ({ values, isSubmitting, status, errors }) => (
   <Form className="max-w-xs mb-8">
     {/* Error Message */}
-    {errors.submit && <div className="text-red">{errors.submit}</div>}
+    {errors.submit && <div className="text-red mb-2">{errors.submit}</div>}
     {/* Success Message */}
     {status && status.success && (
-      <div className="text-green">form submitted success</div>
+      <div className="text-green mb-2">Form submitted successfully</div>
     )}
     <div className="mb-4">
       <Field
@@ -48,7 +48,7 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
         checked={values.newsletter}
         className="mr-2"
       />
-      <label htmlFor="newsletter">I agree!</label>
+      <label htmlFor="newsletter">Do you agree?</label>
     </div>
     <div className="mb-4">
       <Field component="select" name="plan" className="border p-2">
