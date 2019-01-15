@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 import config from '../../../data/site-config'
-
-import Helmet from 'react-helmet'
 import OpenGraph from './OpenGraph'
 import TwitterCard from './TwitterCard'
 
@@ -45,7 +44,7 @@ const SEOPage = ({ title, description, image, type }) => {
 }
 
 SEOPage.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   type: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,

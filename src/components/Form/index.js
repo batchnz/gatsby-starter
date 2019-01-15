@@ -125,7 +125,6 @@ const FormikForm = withFormik({
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
       .then(() => {
-        console.log()
         resetForm()
         setStatus({ success: true })
       })

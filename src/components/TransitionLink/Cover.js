@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TransitionLink, { TransitionPortal } from 'gatsby-plugin-transition-link'
 import { TimelineMax, Power1 } from 'gsap'
 
-export default class Cover extends Component {
+class Cover extends Component {
   constructor(props) {
     super(props)
 
@@ -112,3 +112,5 @@ export default class Cover extends Component {
     )
   }
 }
+
+export default Cover

@@ -33,5 +33,3 @@ OpenGraph.propTypes = {
 }
 
 export default OpenGraph
-
-// https://neilpatel.com/blog/open-graph-meta-tags/
