@@ -5,10 +5,10 @@ function Checkbox(props) {
   return (
     <Field name={props.name}>
       {({ field, form }) => (
-        <label className="mr-2" htmlFor={props.value}>
+        <label className="mr-4">
           <input
+            className="mr-2"
             type="checkbox"
-            id={props.value}
             {...props}
             checked={field.value.includes(props.value)}
             onChange={() => {
@@ -23,7 +23,7 @@ function Checkbox(props) {
               }
             }}
           />
-          <span className="ml-1 capitalize">{props.value}</span>
+          {props.label}
         </label>
       )}
     </Field>

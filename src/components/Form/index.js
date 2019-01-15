@@ -11,7 +11,7 @@ const encode = data => {
 }
 
 const DefaultForm = ({ values, isSubmitting, status, errors }) => (
-  <Form className="max-w-xs mb-8">
+  <Form className="mb-8">
     {/* Error Message */}
     {errors.submit && <div className="text-red mb-2">{errors.submit}</div>}
     {/* Success Message */}
@@ -19,51 +19,64 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
       <div className="text-green mb-2">Form submitted successfully</div>
     )}
     <div className="mb-4">
+      <label className="block mb-2 text-sm font-bold" htmlFor="name">
+        Name
+      </label>
       <Field
+        id="name"
         type="text"
         name="name"
         placeholder="Name"
-        className="border p-2"
+        className="w-full border p-2"
         required
       />
     </div>
     <div className="mb-4">
+      <label className="block mb-2 text-sm font-bold" htmlFor="email">
+        Email
+      </label>
       <Field
+        id="email"
         type="email"
         name="email"
         placeholder="Email"
-        className="border p-2"
+        className="w-full border p-2"
       />
     </div>
     <div className="mb-4">
-      <Checkbox name="roles" value="admin" label="Admin" />
+      <label className="block mb-2 text-sm font-bold">Roles</label>
+      <Checkbox name="roles" value="admin" label="Administrator" />
       <Checkbox name="roles" value="customer" label="Customer" />
     </div>
     <div className="mb-4">
-      <Field
-        type="checkbox"
-        id="newsletter"
-        name="newsletter"
-        checked={values.newsletter}
-        className="mr-2"
-      />
-      <label htmlFor="newsletter">
-        Yes, I wish to sign up to our newsletter
-      </label>
-    </div>
-    <div className="mb-4">
-      <Field component="select" name="plan" className="border p-2">
+      <label className="block mb-2 text-sm font-bold">Plan</label>
+      <Field component="select" name="plan" className="w-full border">
         <option value="free">Free</option>
         <option value="premium">Premium</option>
       </Field>
     </div>
     <div className="mb-4">
+      <label className="block mb-2 text-sm font-bold" htmlFor="message">
+        Message
+      </label>
       <Field
+        id="message"
         component="textarea"
         name="message"
         placeholder="Leave a message"
-        className="border p-2"
+        className="w-full border p-2"
       />
+    </div>
+    <div className="mb-4">
+      <label>
+        <Field
+          className="mr-2"
+          type="checkbox"
+          name="newsletter"
+          checked={values.newsletter}
+        />
+        Yes, I wish to sign up to our newsletter
+      </label>
     </div>
     <div className="mb-4">
       <button
