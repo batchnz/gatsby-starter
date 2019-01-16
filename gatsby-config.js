@@ -3,7 +3,10 @@ const config = require('./data/site-config')
 module.exports = {
   siteMetadata: {
     title: config.site.title,
-    siteUrl: config.site.url, // No trailing slash
+    description: config.site.description,
+    url: config.site.url, // No trailing slash
+    twitterHandle: config.site.twitterHandle,
+    image: config.site.image,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -25,7 +28,7 @@ module.exports = {
         background_color: config.manifest.bgColor,
         theme_color: config.manifest.themeColor,
         display: 'minimal-ui',
-        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site
+        icon: `src/images/${config.manifest.icon}`,
       },
     },
     'gatsby-plugin-offline',

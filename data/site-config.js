@@ -1,23 +1,20 @@
 module.exports = {
   site: {
-    name: "Batch's Gatsby Starter",
-    url: 'https://gatsby-starter-batch.netlify.com', // No trailing slash
-    title: "Batch's Gatsby Starter",
-    description: 'A GatsbyJS stater with Advanced design in mind.', // Used in the meta description
-    keywords:
-      'Batch, development, web design, web development, mobile design, digital marketing, email champion, ecommerce, e-commerce, e commerce, progressive website, single page application, application, vuejs, vue, react, reactjs, gatsby, fast, pwa, spa, christchurch, new zealand, south island',
+    title: `Batch's Gatsby Starter`,
+    description: `A simple Gatsby starter by Batch`, // Used in the meta description
+    url: `https://gatsby-starter-batch.netlify.com`, // No trailing slash
+    twitterHandle: `@batchnz`,
+    image: `site-image.jpg`, // Relative to the folder `./static/`
   },
   manifest: {
-    shortName: 'Batch Starter', // Under 12 characters
-    themeColor: '#ff006a',
-    bgColor: '#ff006a',
-    icon: 'gatsby-icon.png', // Relative to the folder `./src/images/`
+    shortName: `Batch Starter`, // Under 12 characters.
+    bgColor: `#ff006a`,
+    themeColor: `#ff006a`,
+    icon: `icon.png`, // Relative to the folder `./src/images/`
   },
-  siteImage: 'site-image.jpg', // Relative to the folder `./static/`
-  twitterHandle: 'batchnz',
   google: {
     analytics: {
-      trackingId: '',
+      trackingId: ``,
     },
   },
 }

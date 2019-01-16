@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
-import SEOPage from '../components/SEO/Page'
+import SEO from '../components/SEO'
 
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <SEOPage
+      <SEO
         title="Home"
-        location={location}
         description="This is the Home description"
+        location={location}
       />
       <h1 className="text-4xl leading-tight mb-4">Home</h1>
       <div className="rte">

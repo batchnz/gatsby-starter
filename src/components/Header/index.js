@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => (
   <StaticQuery
     query={graphql`
       query {
-        logo: file(relativePath: { eq: "gatsby-icon.png" }) {
+        logo: file(relativePath: { eq: "icon.png" }) {
           childImageSharp {
             fixed(width: 50) {
               ...GatsbyImageSharpFixed
