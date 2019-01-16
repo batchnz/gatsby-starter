@@ -9,12 +9,13 @@ function SEO({ location, title, description, image, keywords, lang, meta }) {
       query={detailsQuery}
       render={data => {
         const fullUrl =
-          data.site.siteMetadata.url + location.pathname.replace(/\/$|$/, `/`)
+          data.site.siteMetadata.siteUrl +
+          location.pathname.replace(/\/$|$/, `/`)
         const fullDescription =
           description || data.site.siteMetadata.description
         const fullImage =
           image ||
-          data.site.siteMetadata.url + '/' + data.site.siteMetadata.image
+          data.site.siteMetadata.siteUrl + '/' + data.site.siteMetadata.image
         return (
           <Helmet
             htmlAttributes={{
@@ -99,7 +100,7 @@ const detailsQuery = graphql`
         title
         description
         twitterHandle
-        url
+        siteUrl
         image
       }
     }
