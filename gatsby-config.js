@@ -31,7 +31,6 @@ module.exports = {
         icon: `src/images/${config.manifest.icon}`,
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -84,5 +83,6 @@ module.exports = {
       resolve: 'gatsby-plugin-transition-link',
       options: { layout: false },
     },
+    'gatsby-plugin-offline',
   ],
 }
