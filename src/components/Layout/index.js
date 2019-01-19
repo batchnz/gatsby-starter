@@ -6,7 +6,7 @@ import Header from '../Header'
 
 import '../../styles/index.css'
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -29,7 +29,6 @@ const Layout = ({ children, location }) => (
 )
 
 Layout.propTypes = {
-  location: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 }
 

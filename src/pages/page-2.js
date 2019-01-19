@@ -8,7 +8,7 @@ import Form from '../components/Form'
 
 const Page2 = ({ location }) => {
   return (
-    <Layout location={location}>
+    <Layout>
       <SEO
         title="Page 2"
         description="This is the Page 2 description"
