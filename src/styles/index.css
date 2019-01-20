@@ -1,3 +1,7 @@
+.random {
+  @apply bg-red-darker;
+}
+
 /* stylelint-disable */
 @tailwind preflight;
 @tailwind components;
