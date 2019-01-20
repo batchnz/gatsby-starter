@@ -1,2 +1,2 @@
-/sw.js   # Gatsby's default service worker file path
-  Cache-Control: public, max-age=0, must-revalidate
+/sw.js
+  cache-control: max-age=0,no-cache,no-store,must-revalidate
