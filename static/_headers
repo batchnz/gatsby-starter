@@ -1,2 +1,1 @@
-/sw.js
-  cache-control: no-cache
+cache-control: max-age=0, no-cache, no-store, must-revalidate
