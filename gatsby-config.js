@@ -80,6 +80,10 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-purgecss',
+      options: { printRejected: true, tailwind: true },
+    },
+    {
       resolve: 'gatsby-plugin-transition-link',
       options: { layout: false },
     },
