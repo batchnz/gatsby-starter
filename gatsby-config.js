@@ -87,8 +87,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-netlify',
       options: {
-        mergeSecurityHeaders: true, // boolean to turn off the default security headers
-        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        headers: {
+          '/static/*': ['cache-control: public, max-age=31536000, immutable'],
+          '/(.*\\.(js|json|css|ico|png)$)': [
+            'cache-control: public, max-age=31536000, immutable',
+          ],
+          '/(.*)': ['Cache-Control: no-cache'],
+        },
       },
     },
   ],
