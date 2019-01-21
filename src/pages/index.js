@@ -14,7 +14,10 @@ const IndexPage = ({ location }) => {
       />
       <h1 className="text-4xl leading-tight mb-4">Home</h1>
       <div className="rte">
-        <p>Hello World2</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          consequatur.
+        </p>
       </div>
     </Layout>
   )
