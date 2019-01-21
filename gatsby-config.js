@@ -92,7 +92,7 @@ module.exports = {
           '/(.*\\.(js|json|css|ico|png)$)': [
             'cache-control: public, max-age=31536000, immutable',
           ],
-          '/(.*)': ['Cache-Control: no-cache'],
+          '/.*': ['Cache-Control: public, max-age=0, must-revalidate'],
         },
       },
     },
