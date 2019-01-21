@@ -19,7 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <div className="font-sans leading-normal">
+        <div className="font-sans leading-normal random">
           <Header siteTitle={data.site.siteMetadata.title} />
           <div className="max-w-xl mx-auto py-10 px-4">{children}</div>
         </div>
