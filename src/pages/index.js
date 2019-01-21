@@ -14,7 +14,7 @@ const IndexPage = ({ location }) => {
       />
       <h1 className="text-4xl leading-tight mb-4">Home</h1>
       <div className="rte">
-        <p>Hello World</p>
+        <p>Hello World2</p>
       </div>
     </Layout>
   )
