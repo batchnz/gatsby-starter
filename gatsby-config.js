@@ -84,5 +84,12 @@ module.exports = {
       options: { layout: false },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+      },
+    },
   ],
 }
