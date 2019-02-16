@@ -1,7 +1,7 @@
 module.exports = {
   site: {
     title: `Batch's Gatsby Starter`,
-    description: `A simple Gatsby starter by Batch`, // Used in the meta description
+    description: `Batch's Gatsby Starter for simple projects`, // Used in the meta description
     siteUrl: `https://gatsby-starter-batch.netlify.com`, // No trailing slash
     twitterHandle: `@batchnz`,
     image: `site-image.jpg`, // Relative to the folder `./static/`

@@ -1,4 +1,4 @@
-const config = require('./data/site-config')
+const config = require('./config/site')
 
 module.exports = {
   siteMetadata: {
@@ -28,7 +28,7 @@ module.exports = {
         background_color: config.manifest.bgColor,
         theme_color: config.manifest.themeColor,
         display: 'minimal-ui',
-        icon: `src/images/${config.manifest.icon}`,
+        icon: `src/images/${config.manifest.icon}`, // This path is relative to the root of the site
       },
     },
     {
