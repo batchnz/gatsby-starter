@@ -13,9 +13,11 @@ const MenuItem = ({ title, link }) => (
   </Link>
 )
 
-export default () => (
+const Menu = () => (
   <div className="text-sm flex items-center">
     <MenuItem title="Home" link="/" />
     <MenuItem title="Page 2" link="/page-2" />
   </div>
 )
+
+export default Menu
