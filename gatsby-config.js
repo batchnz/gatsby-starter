@@ -87,6 +87,6 @@ module.exports = {
       resolve: 'gatsby-plugin-transition-link',
       options: { layout: false },
     },
-    'gatsby-plugin-offline',
+    // 'gatsby-plugin-offline', // Use with care
   ],
 }
