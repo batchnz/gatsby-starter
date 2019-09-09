@@ -21,11 +21,11 @@ const Header = ({ siteTitle }) => (
       }
     `}
     render={data => (
-      <nav className="bg-purple">
+      <nav className="bg-purple-500">
         <div className="max-w-xl mx-auto md:flex md:items-center py-5 px-4">
           <Link
             className="block text-white no-underline hover:underline focus:underline mr-6 mb-4 md:mb-0"
-            classSpan="flex items-center"
+            wrapperClass="flex items-center"
             cover
             direction="right"
             to="/"

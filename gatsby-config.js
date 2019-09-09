@@ -71,10 +71,10 @@ module.exports = {
           require('postcss-preset-env'), // Defaults to Stage 2
           require('postcss-atroot'),
           require('postcss-property-lookup'),
+          require('stylelint'),
           require('tailwindcss')('./tailwind.config.js'),
           require('postcss-nested'),
           require('autoprefixer')(),
-          require('stylelint'),
           require('postcss-reporter')({ clearReportedMessages: true }),
         ],
       },

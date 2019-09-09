@@ -2,6 +2,6 @@
   p,
   ul,
   ol {
-    margin-bottom: config('margin.4');
+    margin-bottom: theme('margin.4');
   }
 }

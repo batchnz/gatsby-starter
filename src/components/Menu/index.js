@@ -4,7 +4,7 @@ import Link from '../TransitionLink'
 
 const MenuItem = ({ title, link }) => (
   <Link
-    classSpan="text-white no-underline inline-block hover:underline focus:underline mr-6"
+    wrapperClass="text-white no-underline inline-block hover:underline focus:underline mr-6"
     cover
     direction="right"
     to={link}

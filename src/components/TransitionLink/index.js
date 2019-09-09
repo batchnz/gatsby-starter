@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 import Cover from './Cover'
 import TransitionLink from 'gatsby-plugin-transition-link'
 
-export default function Link(props) {
+export default function Link(allProps) {
+  const { wrapperClass, ...props } = allProps
   return (
     <>
       {props.cover && (
         <Cover {...props}>
-          <span className={props.classSpan}>{props.children}</span>
+          <span className={wrapperClass}>{props.children}</span>
         </Cover>
       )}
 
       {!props.cover && (
         <TransitionLink to={props.to}>
-          <span className={props.classSpan}>{props.children}</span>
+          <span className={wrapperClass}>{props.children}</span>
         </TransitionLink>
       )}
     </>
@@ -22,7 +23,7 @@ export default function Link(props) {
 }
 
 Link.propTypes = {
-  classSpan: PropTypes.string,
+  wrapperClass: PropTypes.string,
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }

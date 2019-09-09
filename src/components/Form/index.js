@@ -10,14 +10,26 @@ const encode = data => {
     .join('&')
 }
 
-const DefaultForm = ({ values, isSubmitting, status, errors }) => (
-  <Form className="mb-8">
-    {/* Error Message */}
-    {errors.submit && <div className="text-red mb-2">{errors.submit}</div>}
-    {/* Success Message */}
-    {status && status.success && (
-      <div className="text-green mb-2">Form submitted successfully</div>
-    )}
+/** constants */
+const formName = 'contact'
+const msgSuccess = 'Thanks, we’ll be in touch soon.'
+const msgError = 'There was an error submitting the form, please try again.'
+
+const Success = () => (
+  <div className="text-green-500 mb-2">
+    <p>{msgSuccess}</p>
+  </div>
+)
+
+const FormWithError = ({ isSubmitting, errors, values }) => (
+  <Form
+    className="mb-8"
+    name={formName}
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    {/* * Required by Netlify Form */}
+    <input type="hidden" name="form-name" value={formName} />
     <div className="mb-4">
       <label className="block mb-2 text-sm font-bold" htmlFor="name">
         Name
@@ -78,19 +90,32 @@ const DefaultForm = ({ values, isSubmitting, status, errors }) => (
         Yes, I wish to sign up to our newsletter
       </label>
     </div>
-    <div className="mb-4">
+    {/* Submit Btn & Error Message */}
+    <div class="mb-4">
       <button
         type="submit"
+        aria-label="Send"
         disabled={isSubmitting}
-        className="bg-purple-light hover:bg-purple text-white font-bold py-3 px-5 rounded w-full"
+        className="bg-purple-300 hover:bg-purple-500 text-white font-bold py-3 px-5 rounded w-full"
       >
         Submit
       </button>
+      {/* Error Message */}
+      {errors.submit && <div className="mt-4">{msgError}</div>}
     </div>
-
+    {/* Testing, Please delete me in Production */}
     <pre>{JSON.stringify(values, null, 2)}</pre>
   </Form>
 )
+
+const DefaultForm = props => {
+  const { status } = props
+  if (status && status.success) {
+    return <Success />
+  } else {
+    return <FormWithError {...props} />
+  }
+}
 
 const FormikForm = withFormik({
   mapPropsToValues: values => ({
@@ -106,41 +131,34 @@ const FormikForm = withFormik({
     // if (!values.firstname) errors.firstname = 'Required'
     return errors
   },
-  handleSubmit: (form, { resetForm, setErrors, setStatus, setSubmitting }) => {
-    const convertedFormData = {
-      ...form,
-      ...(form.roles &&
-        !!form.roles.length && { roles: form.roles.join(', ') }),
-    }
-    axios
-      .post(
-        // URL
+  handleSubmit: async (
+    form,
+    { resetForm, setErrors, setStatus, setSubmitting }
+  ) => {
+    try {
+      await axios.post(
         '?no-cache=1',
-        // Data
-        encode({
-          'form-name': 'contact',
-          ...convertedFormData,
-        }),
-        // Header
+        encode({ 'form-name': formName, ...form }),
         { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
       )
-      .then(() => {
-        resetForm()
-        setStatus({ success: true })
-      })
-      .catch(error => {
-        // Set errors.submit message
-        setErrors({
-          submit: 'There is an error to submit the form, please try again.',
-        })
-        // Erasing error message after 5s
-        setTimeout(() => {
-          setErrors({ submit: '' })
-        }, 5000)
-      })
-      .finally(() => {
-        setSubmitting(false)
-      })
+      resetForm()
+      setStatus({ success: true })
+    } catch (error) {
+      // Set errors.submit message
+      setErrors({ submit: true })
+      // Set errors.submit to TRUE
+      if (error.response) {
+        console.error(error.response)
+      } else {
+        console.error(error)
+      }
+      // Erasing error message after 5s
+      setTimeout(() => {
+        setErrors({ submit: '' })
+      }, 5000)
+    } finally {
+      setSubmitting(false)
+    }
   },
 })(DefaultForm)
 
