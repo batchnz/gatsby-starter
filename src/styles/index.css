@@ -1,10 +1,1 @@
-/* stylelint-disable */
-@tailwind base;
-@tailwind components;
-/* stylelint-enable */
-
 @import 'components/rte.css';
-
-/* stylelint-disable */
-@tailwind utilities;
-/* stylelint-enable */

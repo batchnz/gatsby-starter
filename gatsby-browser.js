@@ -4,4 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import './src/styles/tailwind.base.css'
+import './src/styles/tailwind.components.css'
+import './src/styles/index.css'
+import './src/styles/tailwind.utilities.css'
