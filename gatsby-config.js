@@ -66,13 +66,14 @@ module.exports = {
       options: {
         // The plugin order matters
         postCssPlugins: [
+          require('stylelint'),
+          require('postcss-import'),
+          require('tailwindcss')('./tailwind.config.js'),
           require('postcss-extend-rule'),
           require('postcss-advanced-variables'),
           require('postcss-preset-env'), // Defaults to Stage 2
           require('postcss-atroot'),
           require('postcss-property-lookup'),
-          require('stylelint'),
-          require('tailwindcss')('./tailwind.config.js'),
           require('postcss-nested'),
           require('autoprefixer')(),
           require('postcss-reporter')({ clearReportedMessages: true }),
