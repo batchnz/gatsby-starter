@@ -66,8 +66,17 @@ module.exports = {
       options: {
         // The plugin order matters
         postCssPlugins: [
-          require('stylelint'),
           require('postcss-import'),
+          require('stylelint')({
+            rules: {
+              'at-rule-no-unknown': [
+                true,
+                {
+                  ignoreAtRules: ['screen'],
+                },
+              ],
+            },
+          }),
           require('tailwindcss')('./tailwind.config.js'),
           require('postcss-extend-rule'),
           require('postcss-advanced-variables'),
