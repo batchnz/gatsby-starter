@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require('path')
 
 exports.onCreateWebpackConfig = ({ actions, stage }) => {
   const webpackConfig = {
